@@ -951,6 +951,19 @@ body.mobile-nav-active #mobile-nav-toggle {
   height: auto;
 }
 
+.llamar{
+  position: fixed;
+  right: 26px;
+  bottom: 300px;
+  width: 60px;
+  z-index: 1000;
+}
+
+.llamar img{
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 767px) {
   .block {
     padding-left: 30px;
