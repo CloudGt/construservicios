@@ -925,6 +925,32 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
+.appwhatsapp1{
+  position: fixed;
+  right: 26px;
+  bottom: 100px;
+  width: 60px;
+  z-index: 1000;
+}
+
+.appwhatsapp1 img{
+  width: 100%;
+  height: auto;
+}
+
+.appwhatsapp2{
+  position: fixed;
+  right: 26px;
+  bottom: 200px;
+  width: 60px;
+  z-index: 1000;
+}
+
+.appwhatsapp2 img{
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 767px) {
   .block {
     padding-left: 30px;
