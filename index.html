@@ -693,6 +693,28 @@
     </div>
   </section>
 
+      <!--------- cuadros modales -->
+  <div id="elmodal">
+     <div id="Modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content">
+        <div class="modal-header">
+          <button id="cerrar" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+          <div id="galeria" >
+          -contenido de galeria
+          </div>
+        <div class="modal-footer">
+          <button id="cerrar" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          
+        </div>
+      </div>
+        </div>
+      </div>
+  </div>
+
   <footer class="site-footer">
     <div class="bottom">
       <div class="container">
@@ -767,6 +789,17 @@
   <script src="js/custom.js"></script>
 
   <script src="contactform/contactform.js"></script>
-
+  <script type="text/javascript">
+            $(document).ready(function(){
+               $("#posts a").each(function(){
+                  var href = $(this).attr("href");
+                  $(this).attr({ href: "#proyectos"});
+                  $(this).click(function(){
+                     $("#galeria").load(href);
+                     $('#Modal').modal('show');
+                  });
+               });
+            });
+    </script>
 </body>
 </html>
