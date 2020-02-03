@@ -767,17 +767,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
 }
 
-.info{
-  height: auto;
-  width: auto;
-  padding: 0 1.5em;
+.info-form{
+  justify-content: center;
 }
 
-.form form input,
-.form form textarea,
-.form form button{
-  width: 100%;
-  margin-bottom: .5px;
+.info li{
+  list-style: none;
 }
 
 /* ==================================================

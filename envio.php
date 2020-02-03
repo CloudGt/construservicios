@@ -26,8 +26,8 @@
 
       $de= $_POST['name'];
       $remitente=  $_POST['de_email'];
-      $telefono=  $_POST['tel'];
-      $mensaje=  $_POST['el_body'];
+      $telefono=  $_POST['telefono'];
+      $mensaje=  $_POST['message'];
 
       $mail = new PHPMailer;
       $mail->CharSet = 'UTF-8';

@@ -667,9 +667,9 @@
       <h2 class="text-center">
           Historia
       </h2>
-      <P align="justify">
+      <p aling="justify">
         Es una empresa con ocho años de experiencia y capacidad dentro del mercado laboral e industrial, destinada para desarrollar proyectos con profesionalismo brindando soluciones de calidad y satisfaciendo conforme a necesidades y requerimientos de nuestros clientes, los cuales juegan un papel muy importante en nuestro crecimiento. Nuestro fuerte es el desarrollo de trabajo en Herrería y Vidriera en General, Fabricación y Remodelación de todo tipo de trabajo, Electricidad en General, Aire acondicionado y Ductería y todo lo que a nuestro alcance sea dado.
-      </P>
+      </p>
     </div>
   </section>
   <!-- /Team -->
@@ -679,7 +679,7 @@
     <div class="titulo col-md-12">
       <h2 class="section-title">Contactenos</h2>
     </div>
-    <div class="info-form">
+    <div class="row info-form">
       <div class="info col-lg-3 col-md-4">
         <ul>
           <li><i class="fa fa-map-marker"></i><a href="https://www.waze.com/ul?ll=14.50096989%2C-90.59536457&navigate=yes&zoom=17" target="_blank">16 Av. 5-66 Zona 4 Col. Linda Vista, Villa Nueva</a></li>
@@ -692,12 +692,22 @@
       </div>
       <div class="form col-lg-5 col-md-8">
         <form method="POST" action="envio.php">
-          <input type="text" name="name" required="yes">
-          <input type="email" name="de_email" required="yes">
-          <input type="tel" pattern="[0-9]{4}-[0-9]{4}" name="telefono" required="yes">
-          <textarea name="message" required="yes"></textarea>
-          <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-          <button type="submit">Enviar Mensaje</button>
+          <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Nombre" required="yes">            
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="email" name="de_email" placeholder="Correo Electronico" required="yes">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="tel" pattern="[0-9]{8}" name="telefono" placeholder="Telefono" required="yes">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" placeholder="Mensaje" required="yes"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+            <button class="form-control btn btn-primary" type="submit">Enviar Mensaje</button>
+          </div>
         </form>
       </div>
     </div>
