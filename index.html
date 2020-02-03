@@ -676,72 +676,29 @@
   <!-- @component: footer -->
 
   <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h2 class="section-title">Contactenos</h2>
-        </div>
+    <div class="titulo col-md-12">
+      <h2 class="section-title">Contactenos</h2>
+    </div>
+    <div class="info-form">
+      <div class="info col-lg-3 col-md-4">
+        <ul>
+          <li><i class="fa fa-map-marker"></i><a href="https://www.waze.com/ul?ll=14.50096989%2C-90.59536457&navigate=yes&zoom=17" target="_blank">16 Av. 5-66 Zona 4 Col. Linda Vista, Villa Nueva</a></li>
+          <li><i class="fa fa-envelope"></i>info@construservicios.com.gt</li>
+          <li><i class="fa fa-phone"></i><a href="tel:+50253096120">5309-6120</a></li>
+          <li><i class="fa fa-phone"></i><a href="tel:+50233919666">3391-9666</a></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send?phone=50253096120&text=Hola%20necesito%20más%20información%20sobre%20sus%20servicios.">5309-6120</a></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send?phone=50233919666&text=Hola%20necesito%20más%20información%20sobre%20sus%20servicios.">3391-9666</a></li>
+        </ul>
       </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-4">
-          <div class="info">
-            <div>
-              <i class="fa fa-map-marker"></i>
-              <p><a href="https://www.waze.com/ul?ll=14.50096989%2C-90.59536457&navigate=yes&zoom=17" target="_blank">16 Av. 5-66 Zona 4</a><br><a href="https://www.waze.com/ul?ll=14.50096989%2C-90.59536457&navigate=yes&zoom=17" target="_blank">Col. Linda Vista, Villa Nueva</a></p>
-            </div>
-            <!-- https://waze.com/ul?q=66%20Acacia%20Avenue&ll=45.6906304,-120.810983&navigate=yes-->
-            <div>
-              <i class="fa fa-envelope"></i>
-              <p>info@construservicios.com.gt</p>
-            </div>
-
-            <div>
-              <i class="fa fa-phone"></i>
-              <p><a href="tel:+50253096120">5309-6120</a><br><a href="tel:+50233919666">3391-9666</a></p>
-            </div>
-
-            <div>
-              <i class="fab fa-whatsapp"></i>
-              <p><a href="https://api.whatsapp.com/send?phone=50253096120&text=Hola%20necesito%20más%20información%20sobre%20sus%20servicios.">5309-6120</a><br><a href="https://api.whatsapp.com/send?phone=50233919666&text=Hola%20necesito%20más%20información%20sobre%20sus%20servicios.">3391-9666</a></p>
-            </div>
-            <!--
-            <div>
-              <i class="fa fa-phone"></i>
-              <p><a href="https://wa.me/5211234567890?text=Hola%20Mucho%20Gusto,%20¿Me%20podría%20contactar?." 5309-6120</p>
-            </div>
-            https://wa.me/5211234567890?text=Hola%20Mucho%20Gusto,%20¿Me%20podría%20contactar?.
-            -->
-          </div>
-        </div>
-
-        <div class="col-lg-5 col-md-8">
-          <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="envio.php" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Favor ingresar nombre mayor a 4 caracteres." />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electronico" data-rule="email" data-msg="Por favor ingresar correo valido." />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Ingrese un asunto con mas de 8 caracteres." />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor ingrese un mensaje." placeholder="Mensaje"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div><input type="hidden" name="recaptcha_response" id="recaptchaResponse"></div>
-              <div class="text-center"><button type="submit">Enviar</button></div>
-            </form>
-          </div>
-        </div>
-
+      <div class="form col-lg-5 col-md-8">
+        <form method="POST" action="envio.php">
+          <input type="text" name="name" required="yes">
+          <input type="email" name="de_email" required="yes">
+          <input type="tel" pattern="[0-9]{4}-[0-9]{4}" name="telefono" required="yes">
+          <textarea name="message" required="yes"></textarea>
+          <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+          <button type="submit">Enviar Mensaje</button>
+        </form>
       </div>
     </div>
   </section>

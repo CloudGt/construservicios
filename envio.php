@@ -25,9 +25,9 @@
       require 'librerias/smtp/PHPMailerAutoload.php';
 
       $de= $_POST['name'];
-      $remitente=  $_POST['email'];
-      $telefono=  $_POST['subject'];
-      $mensaje=  $_POST['message'];
+      $remitente=  $_POST['de_email'];
+      $telefono=  $_POST['tel'];
+      $mensaje=  $_POST['el_body'];
 
       $mail = new PHPMailer;
       $mail->CharSet = 'UTF-8';
