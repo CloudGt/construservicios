@@ -9,7 +9,7 @@
 
       $mail = new PHPMailer;
       $mail->CharSet = 'UTF-8';
-      $mail->SMTPDebug = 3;                               // Enable verbose debug output
+      //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
       $mail->isSMTP();                                      // Set mailer to use SMTP
       $mail->Host = 'smtp.hostmania.es';  // Specify main and backup SMTP servers
@@ -652,7 +652,7 @@
           //header("Location:index.html");
       } else {
           echo "Message has been sent";
-         //header("Location:index.html");
+         header("Location:index.html");
       }
        
   
