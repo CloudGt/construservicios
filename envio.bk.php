@@ -1,5 +1,27 @@
 <?php
-  
+  if(isset($_POST["recaptcha_response"]) && $_POST["recaptcha_response"])
+  {
+    var_dump($_POST);
+    $secret = "6Ldv7tIUAAAAADsHKcRHblsWjHnZWhrilZp0DjOz";
+    $ip = $_SERVER["REMOTE_ADDR"];
+    echo "<br>";
+    echo $ip;
+    $captcha = $_POST["recaptcha_response"];
+    echo "<br>";
+    echo $captcha;
+    $result = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha&remoteip=$ip");
+    echo "<br>";
+    echo $result;
+    //var_dump($result);
+
+    //echo json_decode($result, TRUE);
+
+    $array = json_decode($result, TRUE);
+
+    //echo $array;
+
+    if($array["success"])
+    {
       require 'librerias/smtp/PHPMailerAutoload.php';
 
       $de= $_POST['name'];
@@ -9,24 +31,25 @@
 
       $mail = new PHPMailer;
       $mail->CharSet = 'UTF-8';
-      $mail->SMTPDebug = 3;                               // Enable verbose debug output
+      //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
       $mail->isSMTP();                                      // Set mailer to use SMTP
-      $mail->Host = 'smtp.hostmania.es';  // Specify main and backup SMTP servers
+      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
       $mail->SMTPAuth = true;                               // Enable SMTP authentication
-      $mail->Username = 'web@construservicios.com.gt';                 // SMTP username
-      $mail->Password = 'construservicios';                           // SMTP password
-      $mail->SMTPSecure = 'TLS';                            // Enable TLS encryption, `ssl` also accepted
-      $mail->Port = 587;                                    // TCP port to connect to
+      $mail->Username = 'web.construservicios@gmail.com';                 // SMTP username
+      $mail->Password = 'CONSTRU2020*1+';                           // SMTP password
+      $mail->SMTPSecure = 'TLS/STARTTLS';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 465;                                    // TCP port to connect to
       $mail->from = $remitente;
       $mail->FromName = $de;
-      $mail->setFrom('web@construservicios.com.gt', 'Contacto via web');
+      $mail->setFrom($remitente, 'Contacto via web');
 
 
       $mail->addReplyTo($remitente, $de);
       //$mail->addAddress('informatica@dacotrans.com.gt', 'User');     // Add a recipient
-      $mail->addAddress('web@construservicios.com.gt','Sistema');               // Name is optional
-      
+      $mail->addAddress('ventas@construservicios.com.gt','Sistema');               // Name is optional
+      $mail->AddBCC('gerencia@construservicios.com.gt');
+      $mail->AddBCC('deivtg@gmail.com');
       //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
       //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
       $mail->isHTML(true);                                  // Set email format to HTML
@@ -654,6 +677,9 @@
           echo "Message has been sent";
          //header("Location:index.html");
       }
-       
-  
+    }else{
+      //header("Location:index.html");
+      echo "Eres spam";
+    }   
+  }
 ?>
