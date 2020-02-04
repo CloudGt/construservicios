@@ -34,12 +34,12 @@
       //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
       $mail->isSMTP();                                      // Set mailer to use SMTP
-      $mail->Host = 'smtp.hostmania.es;';  // Specify main and backup SMTP servers
+      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
       $mail->SMTPAuth = true;                               // Enable SMTP authentication
-      $mail->Username = 'info@construservicios.com.gt';                 // SMTP username
+      $mail->Username = 'web.construservicios@gmail.com';                 // SMTP username
       $mail->Password = 'CONSTRU2020*1+';                           // SMTP password
-      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-      $mail->Port = 587;                                    // TCP port to connect to
+      $mail->SMTPSecure = 'TLS/STARTTLS';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 465;                                    // TCP port to connect to
       $mail->from = $remitente;
       $mail->FromName = $de;
       $mail->setFrom($remitente, 'Contacto via web');
@@ -671,15 +671,15 @@
       $mail->AltBody = 'se ha enviado el siguiente mensaje: '. $mensaje. 'contacto:'.$telefono;
       if(!$mail->send()) {
           //echo "Message could not be sent.";
-          //echo "Mailer Error: " . $mail->ErrorInfo;
-          header("Location:index.html");
+          echo "Mailer Error: " . $mail->ErrorInfo;
+          //header("Location:index.html");
       } else {
-          //echo "Message has been sent";
-         header("Location:index.html");
+          echo "Message has been sent";
+         //header("Location:index.html");
       }
     }else{
-      header("Location:index.html");
-      //echo "Eres spam";
+      //header("Location:index.html");
+      echo "Eres spam";
     }   
   }
 ?>
